@@ -1,30 +1,25 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:test_canvas_app/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
-
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
-
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
+  testWidgets('App renders with canvas, no Flutter Text widgets visible',
+      (WidgetTester tester) async {
+    await tester.pumpWidget(const CanvasTestApp());
     await tester.pump();
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    // App should render without errors
+    expect(find.byType(CustomPaint), findsWidgets);
+
+    // No visible Flutter Text widgets in the tree (all text is canvas-drawn).
+    // The only Text that may exist is inside the hidden TextField.
+    final textWidgets = find.byType(Text);
+    for (final element in textWidgets.evaluate()) {
+      final widget = element.widget as Text;
+      // Any Text widget present should have empty or null data (from hidden TextField)
+      expect(widget.data == null || widget.data!.isEmpty, isTrue,
+          reason: 'Found visible Text widget with content: ${widget.data}');
+    }
   });
 }
