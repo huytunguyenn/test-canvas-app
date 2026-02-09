@@ -106,6 +106,29 @@ adb install build/app/outputs/flutter-apk/app-release.apk
 2. Go to Runner → Signing & Capabilities → select your Team
 3. Then run `flutter build ipa --release`
 
+**Web** — produces a static site in `build/web/`:
+```bash
+flutter build web --release
+```
+
+Output contents:
+```
+build/web/
+  index.html            # Entry point
+  main.dart.js          # Compiled Dart → JavaScript
+  flutter.js            # Flutter engine loader
+  flutter_bootstrap.js
+  manifest.json         # PWA manifest
+  assets/               # Fonts, images (avatar.png), etc.
+  canvaskit/            # CanvasKit rendering engine (WASM)
+```
+
+Host on any static file server (Nginx, GitHub Pages, Firebase Hosting, Netlify, S3, etc.). To preview locally:
+```bash
+cd build/web && python3 -m http.server 8080
+# Open http://localhost:8080
+```
+
 ## Architecture
 
 ```
