@@ -13,7 +13,7 @@ class HomeScene extends Scene {
   HomeScene({required super.onNavigate}) {
     elements.addAll([
       CanvasElement(id: 'avatar', type: ElementType.label, label: ''),
-      CanvasElement(id: 'title', type: ElementType.label, label: 'Canvas Test App'),
+      CanvasElement(id: 'title', type: ElementType.label, label: 'Kobiton Canvas App'),
       CanvasElement(id: 'subtitle', type: ElementType.label, label: 'All UI is drawn on Canvas'),
       CanvasElement(id: 'btn_login', type: ElementType.button, label: 'Login Form'),
       CanvasElement(id: 'btn_dashboard', type: ElementType.button, label: 'Dashboard'),

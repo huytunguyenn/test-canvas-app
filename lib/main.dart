@@ -16,7 +16,7 @@ class CanvasTestApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Canvas Test App',
+      title: 'Kobiton Canvas App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue)),
       home: const CanvasShell(),

@@ -1,6 +1,6 @@
 {
-    "name": "test_canvas_app",
-    "short_name": "test_canvas_app",
+    "name": "Kobiton Canvas App",
+    "short_name": "Kobiton Canvas App",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
