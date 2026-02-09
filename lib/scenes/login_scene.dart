@@ -50,10 +50,10 @@ class LoginScene extends Scene {
     var y = 40.0;
 
     // Back button (top-left)
-    elements[0].bounds = const Rect.fromLTWH(16, 16, 80, 40);
+    elements[0].bounds = const Rect.fromLTWH(16, 50, 80, 40);
 
     // Title
-    y = 90;
+    y = 120;
     elements[1].bounds = Rect.fromLTWH(left, y, formWidth, 30);
 
     // Username field

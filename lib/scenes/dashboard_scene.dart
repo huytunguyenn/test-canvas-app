@@ -49,39 +49,38 @@ class DashboardScene extends Scene {
   @override
   void layout(Size size) {
     final cx = size.width / 2;
-    const cardWidth = 160.0;
+    const padding = 16.0;
+    const cardGap = 10.0;
+    final availableWidth = size.width - padding * 2;
+    final cardWidth = (availableWidth - cardGap * 2) / 3;
     const cardHeight = 80.0;
-    const cardGap = 16.0;
-    final totalCardsWidth = 3 * cardWidth + 2 * cardGap;
-    final cardsLeft = cx - totalCardsWidth / 2;
 
     // Back button
-    elements[0].bounds = const Rect.fromLTWH(16, 16, 80, 40);
+    elements[0].bounds = const Rect.fromLTWH(16, 50, 80, 40);
 
     // Title
-    elements[1].bounds = Rect.fromLTWH(cx - 150, 80, 300, 32);
+    elements[1].bounds = Rect.fromLTWH(padding, 110, availableWidth, 32);
 
-    // 3 stat cards in a row
+    // 3 stat cards in a row — responsive to screen width
     for (var i = 0; i < 3; i++) {
       elements[2 + i].bounds = Rect.fromLTWH(
-        cardsLeft + i * (cardWidth + cardGap),
-        140,
+        padding + i * (cardWidth + cardGap),
+        170,
         cardWidth,
         cardHeight,
       );
     }
 
-    // Action buttons side by side
-    const btnWidth = 160.0;
-    const btnGap = 16.0;
-    final btnsLeft = cx - (2 * btnWidth + btnGap) / 2;
+    // Action buttons side by side — responsive
+    const btnGap = 12.0;
+    final btnWidth = (availableWidth - btnGap) / 2;
 
-    elements[5].bounds = Rect.fromLTWH(btnsLeft, 260, btnWidth, 48);
+    elements[5].bounds = Rect.fromLTWH(padding, 290, btnWidth, 48);
     elements[6].bounds =
-        Rect.fromLTWH(btnsLeft + btnWidth + btnGap, 260, btnWidth, 48);
+        Rect.fromLTWH(padding + btnWidth + btnGap, 290, btnWidth, 48);
 
     // Notifications checkbox
-    elements[7].bounds = Rect.fromLTWH(cx - 120, 340, 240, 28);
+    elements[7].bounds = Rect.fromLTWH(cx - 120, 370, 240, 28);
   }
 
   @override
