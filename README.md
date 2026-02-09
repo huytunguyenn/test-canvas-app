@@ -1,6 +1,16 @@
-# Canvas Test App
+# Kobiton Canvas App
 
 A Flutter app where **all UI is drawn via `CustomPainter` on canvas** — no Flutter widgets appear in the visual tree. This simulates a remote desktop viewer to validate LLM-based element detection from screenshots.
+
+## App Identifiers
+
+| Platform | Bundle / Package ID |
+|----------|---------------------|
+| Android | `com.kobiton.kobiton_canvas_app` |
+| iOS | `com.kobiton.kobitonCanvasApp` |
+| macOS | `com.kobiton.kobitonCanvasApp` |
+| Linux | `com.kobiton.kobiton_canvas_app` |
+| Dart package | `kobiton_canvas_app` |
 
 ## Why
 

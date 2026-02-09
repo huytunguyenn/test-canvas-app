@@ -147,3 +147,5 @@ secrets.dart
 secrets.json
 google-services.json
 GoogleService-Info.plist
+
+.claude

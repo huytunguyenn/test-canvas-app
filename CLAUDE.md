@@ -4,7 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Canvas-based Flutter test app (test_canvas_app) where ALL visible UI is drawn via `CustomPainter` — no Flutter widgets in the visual tree. Simulates a remote desktop viewer for testing LLM-based element detection from screenshots. Targets iOS, Android, web, macOS, Linux, and Windows. Uses Dart SDK ^3.10.8.
+**Kobiton Canvas App** (`kobiton_canvas_app`) — a Flutter app where ALL visible UI is drawn via `CustomPainter` — no Flutter widgets in the visual tree. Simulates a remote desktop viewer for testing LLM-based element detection from screenshots. Targets iOS, Android, web, macOS, Linux, and Windows. Uses Dart SDK ^3.10.8.
+
+Bundle identifiers: `com.kobiton.kobitonCanvasApp` (iOS/macOS), `com.kobiton.kobiton_canvas_app` (Android/Linux).
 
 ## Commands
 
